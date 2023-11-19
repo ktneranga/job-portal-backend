@@ -15,7 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.AuthService = void 0;
 const bcrypt_1 = __importDefault(require("bcrypt"));
 const commonResponse_1 = require("../utils/commonResponse");
-const client_1 = require("@prisma/client");
+const client_1 = require("../../prisma/generated/client");
 const jwt_1 = __importDefault(require("../utils/jwt"));
 const prisma = new client_1.PrismaClient({});
 class AuthService {
