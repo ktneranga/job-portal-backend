@@ -1,6 +1,6 @@
 import bcrypt from 'bcrypt';
 import { CommonResponse } from '../utils/commonResponse';
-import { PrismaClient } from '@prisma/client';
+import { PrismaClient } from '../../prisma/generated/client';
 import jwt from '../utils/jwt';
 
 const prisma = new PrismaClient({});

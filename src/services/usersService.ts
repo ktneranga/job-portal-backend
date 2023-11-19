@@ -1,4 +1,4 @@
-import { PrismaClient } from '@prisma/client';
+import { PrismaClient } from '../../prisma/generated/client';
 import { CommonResponse } from '../utils/commonResponse';
 
 const prisma = new PrismaClient();
