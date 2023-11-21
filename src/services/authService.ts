@@ -2,6 +2,7 @@ import bcrypt from 'bcrypt';
 import { CommonResponse } from '../utils/commonResponse';
 import { PrismaClient } from '@prisma/client';
 import jwt from '../utils/jwt';
+import { exclude } from '../utils/exclude';
 
 const prisma = new PrismaClient({});
 
@@ -87,10 +88,6 @@ export class AuthService {
 
             if (!isValidPassword) {
                 throw new Error('Passwords are not matched!');
-            }
-
-            function exclude<User, Key extends keyof User>(user: User, keys: Key[]) {
-                return Object.fromEntries(Object.entries(user as any).filter(([key]) => !keys.includes(key as Key)));
             }
 
             const userWithoutPassword = exclude(user, ['password']);
